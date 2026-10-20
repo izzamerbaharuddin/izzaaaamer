@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Your Name – QA &amp; Software Quality</title>
-<meta name="description" content="IT student specialising in software quality. QA intern in digital banking. Building ML fraud detection.">
+<title>Izzamer Bin Baharuddin – QA &amp; Software Quality</title>
+<meta name="description" content="UTP IT graduate specialising in software quality. QA intern in digital banking. Building ML fraud detection.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -20,7 +20,7 @@ a{color:var(--accent)}
 a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:70px 0 50px}
-h1{font-size:clamp(3rem,11vw,6.6rem);font-weight:800;letter-spacing:-.035em;background:linear-gradient(100deg,#fff 30%,#9db4ff 70%,#c3a6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1{font-size:clamp(2.6rem,9vw,5.4rem);font-weight:800;letter-spacing:-.035em;background:linear-gradient(100deg,#fff 30%,#9db4ff 70%,#c3a6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
 .role{font-size:clamp(1.05rem,2.6vw,1.4rem);color:var(--muted);margin:16px 0 30px;min-height:1.6em}
 .caret{display:inline-block;width:.6ch;height:1.1em;background:var(--accent);vertical-align:-.15em;margin-left:2px;animation:blink 1s steps(2) infinite}
 @keyframes blink{50%{opacity:0}}
@@ -55,6 +55,24 @@ ul.pts{margin:10px 0 0;padding-left:20px}ul.pts li{margin:6px 0}
 .rv.in{opacity:1;transform:none}
 footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
 @media(prefers-reduced-motion:reduce){.rv,.term .l,.sum{opacity:1!important;transform:none!important;transition:none!important}.caret{animation:none}}
+
+.scene{position:relative;height:calc(var(--k)*5.2 + 50px);perspective:1300px;margin:6px 0 4px;--k:clamp(48px,10vw,84px);--r:calc(var(--k)*.17)}
+.board{position:absolute;left:50%;top:50%;display:grid;grid-template-columns:repeat(4,var(--k));gap:calc(var(--k)*.18);padding:calc(var(--k)*.3);border-radius:calc(var(--k)*.35);background:linear-gradient(145deg,#141d38,#0b1226);transform-style:preserve-3d;transform:translate(-50%,-50%) rotateX(58deg) rotateZ(-45deg);box-shadow:-30px 40px 60px rgba(0,0,0,.55),0 0 0 2px rgba(124,156,255,.18);transition:transform .25s ease-out}
+.key{position:relative;width:var(--k);height:var(--k);transform-style:preserve-3d;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.sock{position:absolute;inset:calc(var(--k)*-.05);border-radius:calc(var(--r) + 4px);background:#070c1a;box-shadow:inset 0 0 14px #000}
+.cap{position:absolute;inset:0;transform-style:preserve-3d;transform:translateZ(5px);transition:transform .16s cubic-bezier(.3,1.7,.5,1)}
+.key:hover .cap,.key:focus-visible .cap,.key.up .cap{transform:translateZ(16px)}
+.key.on .cap{transform:translateZ(-7px);transition-duration:.06s}
+.ly{position:absolute;inset:0;border-radius:var(--r);background:color-mix(in srgb,var(--c) 42%,#000)}
+.top{position:absolute;inset:0;border-radius:var(--r);transform:translateZ(22px);background:linear-gradient(145deg,color-mix(in srgb,var(--c) 70%,#fff),var(--c));display:grid;place-items:center;color:#07101f;font:600 calc(var(--k)*.25) "IBM Plex Mono",monospace;box-shadow:inset 0 0 0 2px rgba(255,255,255,.28),inset 0 -6px 10px rgba(0,0,0,.15);transition:box-shadow .2s}
+.top i{position:absolute;right:11%;bottom:7%;font-style:normal;font-size:.5em;opacity:.55}
+.key:hover .top,.key:focus-visible .top,.key.sel .top{box-shadow:inset 0 0 0 2px rgba(255,255,255,.5),0 0 calc(var(--k)*.5) color-mix(in srgb,var(--c) 75%,transparent)}
+.detail{border-left:4px solid var(--c);transition:border-color .25s;margin-top:10px}
+.detail h3{font-size:1.6rem}
+.detail.pop{animation:pop .3s ease-out}
+@keyframes pop{from{transform:translateY(6px);opacity:.4}to{transform:none;opacity:1}}
+#snd{font-size:.8rem;padding:8px 14px;cursor:pointer}
+@media(prefers-reduced-motion:reduce){.detail.pop{animation:none}.cap,.board{transition:none}}
 </style>
 </head>
 <body>
@@ -62,7 +80,7 @@ footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
 <main class="wrap">
 
 <header class="hero">
-  <h1>Your Name</h1>
+  <h1>Izzamer Bin Baharuddin</h1>
   <p class="role"><span id="role"></span><span class="caret" aria-hidden="true"></span></p>
   <div class="term mono" id="term" aria-label="Sample test run">
     <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -80,7 +98,7 @@ footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
 <section id="about" class="rv">
   <h2>About</h2>
   <div class="card">
-    <p>I’m completing a Bachelor of Information Technology with a major in Software Quality and a minor in Financial Management. Money software has to be correct, so I test it with both the technical and the financial side in mind.</p>
+    <p>I’m a graduate of Universiti Teknologi PETRONAS (UTP) with a Bachelor of Information Technology, majoring in Software Quality with a minor in Financial Management. Money software has to be correct, so I test it with both the technical and the financial side in mind.</p>
     <p>I recently finished a QA internship at a digital bank and I’m looking for my first full-time role in quality assurance or software testing. <span class="ph">[One sentence on what you enjoy most about testing.]</span></p>
   </div>
 </section>
@@ -117,12 +135,14 @@ footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
 
 <section id="skills" class="rv">
   <h2>Skills</h2>
-  <div class="grid">
-    <div class="card"><h3>Testing</h3><div class="chips"><span class="chip">Test cases</span><span class="chip">Regression</span><span class="chip">Exploratory</span><span class="chip">Bug reports</span></div></div>
-    <div class="card"><h3>Tools</h3><div class="chips"><span class="chip ph">Jira</span><span class="chip ph">Postman</span><span class="chip ph">Selenium</span><span class="chip ph">Git</span></div></div>
-    <div class="card"><h3>Data and ML</h3><div class="chips"><span class="chip">Python</span><span class="chip">Data analysis</span><span class="chip">Model evaluation</span></div></div>
-    <div class="card"><h3>Finance</h3><div class="chips"><span class="chip">Financial management</span><span class="chip">Digital banking</span></div></div>
+  <p class="meta mono">Hint: press a key. Tap one, or use Q W E R / A S D F / Z X C V on your keyboard.</p>
+  <div class="scene" id="scene"><div class="board" id="board" role="group" aria-label="Skills keyboard"></div></div>
+  <div class="card detail" id="detail" aria-live="polite" style="--c:#7C9CFF">
+    <div class="meta mono" id="dk">KEY</div>
+    <h3 id="dt">Press a key</h3>
+    <p id="dd">Each key is a skill. Press one to see what it means and how I use it.</p>
   </div>
+  <button class="btn alt mono" id="snd" type="button" aria-pressed="false">Sound: off</button>
 </section>
 
 <section id="contact" class="rv">
@@ -137,7 +157,7 @@ footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
   </div>
 </section>
 </main>
-<footer><div class="wrap">Bachelor of Information Technology, Software Quality</div></footer>
+<footer><div class="wrap">Izzamer Bin Baharuddin · UTP graduate, Bachelor of Information Technology</div></footer>
 
 <script>
 (function(){
@@ -189,9 +209,87 @@ footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
       g.font='500 11px "IBM Plex Mono",monospace';g.fillText('flagged: suspicious',f.x+12,f.y-10);
       if(t>170)flag=null}}
   if(reduce){pickFlag();flag.t=40;draw();return}
-  setInterval(function(){var a=nodes[Math.floor(Math.random()*nodes.length)],best=null,bd=999;nodes.forEach(function(b){var d=Math.hypot(a.x-b.x,a.y-b.y);if(b!==a&&d<135&&d<bd){bd=d;best=b}});if(best)pulses.push({a:a,b:best,t:0})},260);
+  function addPulse(){var a=nodes[Math.floor(Math.random()*nodes.length)],best=null,bd=999;nodes.forEach(function(b){var d=Math.hypot(a.x-b.x,a.y-b.y);if(b!==a&&d<135&&d<bd){bd=d;best=b}});if(best)pulses.push({a:a,b:best,t:0})}setInterval(addPulse,260);addEventListener('keyhit',function(){for(var q=0;q<24;q++)addPulse()});
   setInterval(function(){if(!flag)pickFlag()},5200);setTimeout(pickFlag,2500);
   (function loop(){draw();requestAnimationFrame(loop)})();
+})();
+</script>
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var K=[
+   ['TC','Q','#FF8A3D','Test Cases','Turning requirements into clear steps and expected results that cover normal, edge and failure paths.'],
+   ['REG','W','#4C8DFF','Regression Testing','Re-running the important checks after every change so new features don’t quietly break old ones.'],
+   ['EXP','E','#1FC7C0','Exploratory Testing','Poking at the app without a script to find the bugs nobody thought to write a test for.'],
+   ['BUG','R','#FF5D6C','Bug Reporting','Writing defects a developer can reproduce on the first read: steps, expected vs actual result, and evidence.'],
+   ['JIRA','A','#3D7BFF','Jira','Tracking defects and test progress. <span class="ph">[Edit: how you used it at Kaf Digital Bank]</span>'],
+   ['API','S','#FF7A2F','Postman','Checking that API requests and responses behave correctly. <span class="ph">[Edit: what you tested]</span>'],
+   ['SEL','D','#2FBF71','Selenium','Automating browser checks so the same tests can run again and again. <span class="ph">[Edit or remove if you haven’t used it]</span>'],
+   ['SQL','F','#F5B33D','SQL','Querying data to confirm that what the app shows matches what the database holds.'],
+   ['PY','Z','#8B6BFF','Python','Data cleaning, model training and evaluation for my fraud detection project. <span class="ph">[Confirm]</span>'],
+   ['GIT','X','#FF6BB5','Git and GitHub','Version control for my projects. This portfolio is hosted on GitHub Pages.'],
+   ['ML','C','#19C4F0','Machine Learning','Built my final year project: a model that flags suspicious credit card transactions.'],
+   ['FIN','V','#B7E34A','Financial Management','A minor in finance, so I understand the money flows I’m testing.']
+  ];
+  var board=document.getElementById('board'),scene=document.getElementById('scene'),card=document.getElementById('detail');
+  var keys=[],sound=false,ac=null;
+  K.forEach(function(k,i){
+    var el=document.createElement('div');el.className='key';el.setAttribute('role','button');el.tabIndex=0;el.setAttribute('aria-label',k[3]);el.style.setProperty('--c',k[2]);
+    var h='<div class="sock"></div><div class="cap">';
+    for(var j=0;j<8;j++)h+='<div class="ly" style="transform:translateZ('+(j*2.6)+'px)"></div>';
+    h+='<div class="top">'+k[0]+'<i>'+k[1]+'</i></div></div>';
+    el.innerHTML=h;board.appendChild(el);keys.push(el);
+    el.addEventListener('pointerdown',function(){press(i)});
+    el.addEventListener('pointerup',function(){release(i)});
+    el.addEventListener('pointerleave',function(){release(i)});
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();if(!e.repeat)press(i)}});
+    el.addEventListener('keyup',function(e){if(e.key==='Enter'||e.key===' ')release(i)});
+  });
+  function click(){
+    if(!sound)return;
+    try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+    var n=Math.floor(ac.sampleRate*.045),b=ac.createBuffer(1,n,ac.sampleRate),d=b.getChannelData(0);
+    for(var i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/n,4);
+    var s=ac.createBufferSource();s.buffer=b;var f=ac.createBiquadFilter();f.type='bandpass';f.frequency.value=1700;
+    var g=ac.createGain();g.gain.value=.4;s.connect(f);f.connect(g);g.connect(ac.destination);s.start()}catch(e){}
+  }
+  function press(i){
+    keys.forEach(function(x){x.classList.remove('sel')});
+    keys[i].classList.add('on','sel');
+    var k=K[i];card.style.setProperty('--c',k[2]);
+    document.getElementById('dk').textContent='KEY '+k[1];
+    document.getElementById('dt').textContent=k[3];
+    document.getElementById('dd').innerHTML=k[4];
+    card.classList.remove('pop');void card.offsetWidth;card.classList.add('pop');
+    click();dispatchEvent(new Event('keyhit'));
+  }
+  function release(i){keys[i].classList.remove('on')}
+  addEventListener('keydown',function(e){
+    if(e.ctrlKey||e.metaKey||e.altKey||e.repeat)return;
+    var t=e.target&&e.target.tagName;if(t==='INPUT'||t==='TEXTAREA')return;
+    var L=e.key.toUpperCase();
+    for(var i=0;i<K.length;i++)if(K[i][1]===L){press(i);return}
+  });
+  addEventListener('keyup',function(e){var L=e.key.toUpperCase();for(var i=0;i<K.length;i++)if(K[i][1]===L)release(i)});
+  /* tilt with pointer */
+  if(!reduce){
+    scene.addEventListener('pointermove',function(e){
+      if(e.pointerType==='touch')return;
+      var r=scene.getBoundingClientRect(),dx=(e.clientX-r.left)/r.width-.5,dy=(e.clientY-r.top)/r.height-.5;
+      board.style.transform='translate(-50%,-50%) rotateX('+(58-dy*10)+'deg) rotateZ('+(-45+dx*14)+'deg)';
+    });
+    scene.addEventListener('pointerleave',function(){board.style.transform=''});
+  }
+  /* wave when first seen */
+  if(!reduce&&'IntersectionObserver' in window){
+    var seen=false,io2=new IntersectionObserver(function(es){
+      if(es[0].isIntersecting&&!seen){seen=true;
+        keys.forEach(function(el,i){var r=Math.floor(i/4),c=i%4;setTimeout(function(){el.classList.add('up');setTimeout(function(){el.classList.remove('up')},260)},300+(r+c)*130)});
+        io2.disconnect()}
+    },{threshold:.5});io2.observe(scene);
+  }
+  var sb=document.getElementById('snd');
+  sb.addEventListener('click',function(){sound=!sound;sb.textContent='Sound: '+(sound?'on':'off');sb.setAttribute('aria-pressed',sound);if(sound)click()});
 })();
 </script>
 </body>
