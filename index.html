@@ -3,30 +3,39 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#09090B">
 <title>Izzamer Bin Baharuddin – QA &amp; Software Quality</title>
 <meta name="description" content="UTP IT graduate specialising in software quality. QA intern in digital banking. Building ML fraud detection.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600;800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#060A14;--glass:rgba(16,24,44,.62);--ink:#EAF0FF;--muted:#9AA8C7;--line:rgba(140,165,255,.18);--pass:#4ADE9A;--fail:#FF6B6B;--accent:#7C9CFF}
+:root{--bg:#09090B;--ink:#F4F4F0;--muted:#9B9BA5;--lime:#C8FF3C;--coral:#FF4D6D;--line:rgba(255,255,255,.1);--glass:rgba(18,18,22,.68);--pass:#C8FF3C;--fail:#FF4D6D;--accent:#C8FF3C}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,sans-serif;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "DM Sans",system-ui,sans-serif;overflow-x:clip;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:2;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
 #bg{position:fixed;inset:0;width:100%;height:100%;z-index:0}
 main,footer{position:relative;z-index:1}
-.wrap{max-width:900px;margin:0 auto;padding:0 22px}
-h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;line-height:1.05;margin:0}
-a{color:var(--accent)}
-a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
-.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:70px 0 50px}
-h1{font-size:clamp(2.6rem,9vw,5.4rem);font-weight:800;letter-spacing:-.035em;background:linear-gradient(100deg,#fff 30%,#9db4ff 70%,#c3a6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-.role{font-size:clamp(1.05rem,2.6vw,1.4rem);color:var(--muted);margin:16px 0 30px;min-height:1.6em}
-.caret{display:inline-block;width:.6ch;height:1.1em;background:var(--accent);vertical-align:-.15em;margin-left:2px;animation:blink 1s steps(2) infinite}
+main{counter-reset:s}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:"Unbounded","DM Sans",sans-serif;margin:0;line-height:1.08}
+a{color:var(--lime)}
+a:focus-visible,.btn:focus-visible,.key:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+.mono{font-family:"JetBrains Mono",ui-monospace,Menlo,monospace}
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:70px 0 120px;scroll-snap-align:start;scroll-snap-stop:always}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.82rem;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 14px;align-self:flex-start;margin-bottom:22px;background:var(--glass)}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(200,255,60,.6);animation:ping 1.8s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(200,255,60,0)}100%{box-shadow:0 0 0 0 rgba(200,255,60,0)}}
+h1{font-weight:800;letter-spacing:-.04em;font-size:clamp(3.3rem,13.5vw,8.2rem)}
+h1 span{display:block}
+h1 .sub{font-family:"JetBrains Mono",monospace;font-weight:500;font-size:clamp(1.05rem,3.4vw,1.9rem);letter-spacing:0;color:var(--lime);margin-top:12px}
+.role{font-size:clamp(1rem,2.4vw,1.25rem);color:var(--muted);margin:20px 0 30px;min-height:1.7em;max-width:36em}
+.caret{display:inline-block;width:.6ch;height:1.05em;background:var(--lime);vertical-align:-.15em;margin-left:2px;animation:blink 1s steps(2) infinite}
 @keyframes blink{50%{opacity:0}}
-.term{background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:12px;padding:16px 20px;max-width:580px;font-size:.92rem;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.term{background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:14px;padding:16px 20px;max-width:590px;font-size:.9rem;box-shadow:0 24px 70px rgba(0,0,0,.5)}
 .term .dots{display:flex;gap:6px;margin-bottom:12px}
-.term .dots i{width:10px;height:10px;border-radius:50%;background:#33406a}
+.term .dots i{width:10px;height:10px;border-radius:50%}
+.term .dots i:nth-child(1){background:var(--coral)}.term .dots i:nth-child(2){background:#FFD23F}.term .dots i:nth-child(3){background:var(--lime)}
 .term .l{display:flex;gap:12px;padding:4px 0;opacity:0;transform:translateY(4px);transition:opacity .3s,transform .3s}
 .term .l.on{opacity:1;transform:none}
 .st{min-width:4ch;font-weight:500}
@@ -34,53 +43,76 @@ h1{font-size:clamp(2.6rem,9vw,5.4rem);font-weight:800;letter-spacing:-.035em;bac
 .sum{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);color:var(--muted);opacity:0;transition:opacity .4s}
 .sum.on{opacity:1}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.btn{display:inline-block;padding:13px 22px;border-radius:10px;background:var(--accent);color:#08102A;text-decoration:none;font-weight:500;transition:transform .15s,box-shadow .15s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,156,255,.45)}
-.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
-section{padding:56px 0}
-h2{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:600;margin-bottom:24px}
-.card{--mx:50%;--my:50%;background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin-bottom:18px;position:relative;overflow:hidden}
-.card::before{content:"";position:absolute;inset:0;background:radial-gradient(320px circle at var(--mx) var(--my),rgba(124,156,255,.16),transparent 60%);opacity:0;transition:opacity .25s;pointer-events:none}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;background:var(--lime);color:#09090B;text-decoration:none;font-weight:500;border:1px solid var(--lime);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(200,255,60,.35)}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.alt:hover{border-color:var(--lime);box-shadow:none}
+.marq{position:absolute;left:50%;bottom:34px;margin:0 0 0 -50vw;width:100vw;transform:rotate(-1.8deg);background:var(--lime);color:#09090B;overflow:hidden;white-space:nowrap;padding:13px 0;font-family:"Unbounded",sans-serif;font-weight:600;font-size:.95rem;letter-spacing:.02em}
+.marq .track{display:inline-flex;animation:mq 30s linear infinite}
+.marq span{padding-right:2.2ch}
+@keyframes mq{to{transform:translateX(-50%)}}
+section{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:84px 0 56px;scroll-snap-align:start;scroll-snap-stop:always}
+h2{font-size:clamp(2.2rem,7vw,4.4rem);font-weight:600;letter-spacing:-.03em;margin-bottom:26px}
+h2::before{counter-increment:s;content:"0" counter(s) " /";display:block;font:500 .8rem "JetBrains Mono",monospace;color:var(--lime);letter-spacing:.08em;margin-bottom:10px}
+.card{--mx:50%;--my:50%;background:var(--glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:18px;padding:26px 28px;margin-bottom:18px;position:relative;overflow:hidden;transition:border-color .25s}
+.card:hover{border-color:rgba(200,255,60,.4)}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(340px circle at var(--mx) var(--my),rgba(200,255,60,.09),transparent 60%);opacity:0;transition:opacity .25s;pointer-events:none}
 .card:hover::before{opacity:1}
-.card h3{font-size:1.35rem;margin-bottom:6px}
+.card h3{font-size:1.25rem;margin-bottom:6px;letter-spacing:-.02em}
 .card p{margin:8px 0}
-.meta{color:var(--muted);font-size:.88rem}
+.meta{color:var(--muted);font-size:.85rem}
 ul.pts{margin:10px 0 0;padding-left:20px}ul.pts li{margin:6px 0}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-.chip{border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:.85rem;background:rgba(124,156,255,.08)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-.grid .card{margin:0}
-.ph{background:rgba(255,107,107,.16);border-radius:4px;padding:0 4px}
-.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
-.rv.in{opacity:1;transform:none}
+.chip{border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:.85rem;background:rgba(255,255,255,.04)}
+.ph{background:rgba(255,77,109,.18);border-radius:4px;padding:0 4px}
+.pg:not(.in)>*:not(.marq){opacity:0;transition:opacity .35s}
+.pg.in>*:not(.marq){animation:up .85s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i,0)*90ms)}
+@keyframes up{from{opacity:0;transform:translateY(46px) scale(.97)}to{opacity:1;transform:none}}
+#pnav{position:fixed;right:calc(14px + env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);z-index:5;display:flex;flex-direction:column;gap:6px}
+#pnav a{display:flex;align-items:center;justify-content:flex-end;gap:10px;text-decoration:none;color:var(--ink);font:500 .7rem "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;padding:6px 4px}
+#pnav a span{opacity:0;transform:translateX(6px);transition:.2s;pointer-events:none;background:var(--glass);padding:2px 8px;border-radius:6px}
+#pnav a:hover span,#pnav a:focus-visible span{opacity:1;transform:none}
+#pnav a i{width:8px;height:8px;border-radius:99px;background:rgba(255,255,255,.35);transition:.3s}
+#pnav a.act i{height:28px;background:var(--lime);box-shadow:0 0 14px rgba(200,255,60,.7)}
+#cnt{position:fixed;left:calc(18px + env(safe-area-inset-left,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:5;font:500 .72rem "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);white-space:pre}
+.foot{margin-top:36px;color:var(--muted);font-size:.8rem}
+@media(max-width:640px){#pnav{gap:0}#pnav a span{display:none}#cnt{font-size:.62rem}}
 footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
-@media(prefers-reduced-motion:reduce){.rv,.term .l,.sum{opacity:1!important;transform:none!important;transition:none!important}.caret{animation:none}}
-
-.scene{position:relative;height:calc(var(--k)*5.2 + 50px);perspective:1300px;margin:6px 0 4px;--k:clamp(48px,10vw,84px);--r:calc(var(--k)*.17)}
-.board{position:absolute;left:50%;top:50%;display:grid;grid-template-columns:repeat(4,var(--k));gap:calc(var(--k)*.18);padding:calc(var(--k)*.3);border-radius:calc(var(--k)*.35);background:linear-gradient(145deg,#141d38,#0b1226);transform-style:preserve-3d;transform:translate(-50%,-50%) rotateX(58deg) rotateZ(-45deg);box-shadow:-30px 40px 60px rgba(0,0,0,.55),0 0 0 2px rgba(124,156,255,.18);transition:transform .25s ease-out}
+.scene{position:relative;height:calc(var(--k)*5.2 + 50px);perspective:1300px;margin:6px 0 4px;--k:clamp(46px,min(10vw,9.5svh),84px);--r:calc(var(--k)*.17)}
+.board{position:absolute;left:50%;top:50%;display:grid;grid-template-columns:repeat(4,var(--k));gap:calc(var(--k)*.18);padding:calc(var(--k)*.3);border-radius:calc(var(--k)*.35);background:linear-gradient(145deg,#1b1b21,#0c0c0f);transform-style:preserve-3d;transform:translate(-50%,-50%) rotateX(58deg) rotateZ(-45deg);box-shadow:-30px 40px 60px rgba(0,0,0,.6),0 0 0 2px rgba(200,255,60,.22);transition:transform .25s ease-out}
 .key{position:relative;width:var(--k);height:var(--k);transform-style:preserve-3d;cursor:pointer;outline:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
-.sock{position:absolute;inset:calc(var(--k)*-.05);border-radius:calc(var(--r) + 4px);background:#070c1a;box-shadow:inset 0 0 14px #000}
+.sock{position:absolute;inset:calc(var(--k)*-.05);border-radius:calc(var(--r) + 4px);background:#050506;box-shadow:inset 0 0 14px #000}
 .cap{position:absolute;inset:0;transform-style:preserve-3d;transform:translateZ(5px);transition:transform .16s cubic-bezier(.3,1.7,.5,1)}
 .key:hover .cap,.key:focus-visible .cap,.key.up .cap{transform:translateZ(16px)}
 .key.on .cap{transform:translateZ(-7px);transition-duration:.06s}
-.ly{position:absolute;inset:0;border-radius:var(--r);background:color-mix(in srgb,var(--c) 42%,#000)}
-.top{position:absolute;inset:0;border-radius:var(--r);transform:translateZ(22px);background:linear-gradient(145deg,color-mix(in srgb,var(--c) 70%,#fff),var(--c));display:grid;place-items:center;color:#07101f;font:600 calc(var(--k)*.25) "IBM Plex Mono",monospace;box-shadow:inset 0 0 0 2px rgba(255,255,255,.28),inset 0 -6px 10px rgba(0,0,0,.15);transition:box-shadow .2s}
+.ly{position:absolute;inset:0;border-radius:var(--r);background:color-mix(in srgb,var(--c) 40%,#000)}
+.top{position:absolute;inset:0;border-radius:var(--r);transform:translateZ(22px);background:linear-gradient(145deg,color-mix(in srgb,var(--c) 70%,#fff),var(--c));display:grid;place-items:center;color:#09090B;font:600 calc(var(--k)*.25) "JetBrains Mono",monospace;box-shadow:inset 0 0 0 2px rgba(255,255,255,.3),inset 0 -6px 10px rgba(0,0,0,.15);transition:box-shadow .2s}
 .top i{position:absolute;right:11%;bottom:7%;font-style:normal;font-size:.5em;opacity:.55}
-.key:hover .top,.key:focus-visible .top,.key.sel .top{box-shadow:inset 0 0 0 2px rgba(255,255,255,.5),0 0 calc(var(--k)*.5) color-mix(in srgb,var(--c) 75%,transparent)}
+.key:hover .top,.key:focus-visible .top,.key.sel .top{box-shadow:inset 0 0 0 2px rgba(255,255,255,.55),0 0 calc(var(--k)*.5) color-mix(in srgb,var(--c) 75%,transparent)}
 .detail{border-left:4px solid var(--c);transition:border-color .25s;margin-top:10px}
-.detail h3{font-size:1.6rem}
+.detail h3{font-size:1.5rem}
 .detail.pop{animation:pop .3s ease-out}
 @keyframes pop{from{transform:translateY(6px);opacity:.4}to{transform:none;opacity:1}}
-#snd{font-size:.8rem;padding:8px 14px;cursor:pointer}
-@media(prefers-reduced-motion:reduce){.detail.pop{animation:none}.cap,.board{transition:none}}
+#snd{font-size:.8rem;padding:8px 16px;cursor:pointer}
+@media(prefers-reduced-motion:reduce){.pg>*{opacity:1!important;animation:none!important}.rv,.term .l,.sum{opacity:1!important;transform:none!important;transition:none!important}.caret,.eyebrow i,.marq .track{animation:none}.detail.pop{animation:none}.cap,.board{transition:none}}
 </style>
 </head>
 <body>
 <canvas id="bg" aria-hidden="true"></canvas>
+<nav id="pnav" aria-label="Sections">
+  <a href="#top"><span>Home</span><i></i></a>
+  <a href="#about"><span>About</span><i></i></a>
+  <a href="#experience"><span>Experience</span><i></i></a>
+  <a href="#projects"><span>Projects</span><i></i></a>
+  <a href="#skills"><span>Skills</span><i></i></a>
+  <a href="#contact"><span>Contact</span><i></i></a>
+</nav>
+<div id="cnt" aria-hidden="true"></div>
 <main class="wrap">
 
-<header class="hero">
-  <h1>Izzamer Bin Baharuddin</h1>
+<header class="hero pg" id="top" data-name="Home">
+  <div class="eyebrow mono"><i></i>Available for QA roles</div>
+  <h1><span>Izzamer</span><span class="sub">bin Baharuddin</span></h1>
   <p class="role"><span id="role"></span><span class="caret" aria-hidden="true"></span></p>
   <div class="term mono" id="term" aria-label="Sample test run">
     <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -95,7 +127,10 @@ footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
   </div>
 </header>
 
-<section id="about" class="rv">
+<div class="marq" aria-hidden="true"><div class="track"><span>QUALITY ASSURANCE ✺ SOFTWARE TESTING ✺ DIGITAL BANKING ✺ FRAUD DETECTION ✺ QUALITY ASSURANCE ✺ SOFTWARE TESTING ✺ DIGITAL BANKING ✺ FRAUD DETECTION ✺ </span><span>QUALITY ASSURANCE ✺ SOFTWARE TESTING ✺ DIGITAL BANKING ✺ FRAUD DETECTION ✺ QUALITY ASSURANCE ✺ SOFTWARE TESTING ✺ DIGITAL BANKING ✺ FRAUD DETECTION ✺ </span></div></div>
+
+
+<section id="about" class="pg" data-name="About">
   <h2>About</h2>
   <div class="card">
     <p>I’m a graduate of Universiti Teknologi PETRONAS (UTP) with a Bachelor of Information Technology, majoring in Software Quality with a minor in Financial Management. Money software has to be correct, so I test it with both the technical and the financial side in mind.</p>
@@ -103,7 +138,7 @@ footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
   </div>
 </section>
 
-<section id="experience" class="rv">
+<section id="experience" class="pg" data-name="Experience">
   <h2>Experience</h2>
   <div class="card">
     <h3>QA Intern, Kaf Digital Bank</h3>
@@ -116,7 +151,7 @@ footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
   </div>
 </section>
 
-<section id="projects" class="rv">
+<section id="projects" class="pg" data-name="Projects">
   <h2>Projects</h2>
   <div class="card">
     <h3>Fraud Detection in Digital Banking Transactions</h3>
@@ -133,11 +168,11 @@ footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
   </div>
 </section>
 
-<section id="skills" class="rv">
+<section id="skills" class="pg" data-name="Skills">
   <h2>Skills</h2>
   <p class="meta mono">Hint: press a key. Tap one, or use Q W E R / A S D F / Z X C V on your keyboard.</p>
   <div class="scene" id="scene"><div class="board" id="board" role="group" aria-label="Skills keyboard"></div></div>
-  <div class="card detail" id="detail" aria-live="polite" style="--c:#7C9CFF">
+  <div class="card detail" id="detail" aria-live="polite" style="--c:#C8FF3C">
     <div class="meta mono" id="dk">KEY</div>
     <h3 id="dt">Press a key</h3>
     <p id="dd">Each key is a skill. Press one to see what it means and how I use it.</p>
@@ -145,7 +180,7 @@ footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
   <button class="btn alt mono" id="snd" type="button" aria-pressed="false">Sound: off</button>
 </section>
 
-<section id="contact" class="rv">
+<section id="contact" class="pg" data-name="Contact">
   <h2>Contact</h2>
   <div class="card">
     <p>Hiring for a QA or testing role? I’d like to hear about it.</p>
@@ -155,9 +190,10 @@ footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
       <a class="btn alt" href="https://github.com/your-username">GitHub</a>
     </div>
   </div>
+  <div class="foot mono">Izzamer Bin Baharuddin · UTP graduate, Bachelor of Information Technology</div>
 </section>
 </main>
-<footer><div class="wrap">Izzamer Bin Baharuddin · UTP graduate, Bachelor of Information Technology</div></footer>
+
 
 <script>
 (function(){
@@ -175,10 +211,14 @@ footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
       sum.classList.add('on')},900+ls.length*600+1500);
   }
   if(reduce)sum.classList.add('on');
-  /* scroll reveal */
-  var rv=document.querySelectorAll('.rv');
-  if('IntersectionObserver' in window&&!reduce){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});rv.forEach(function(r){io.observe(r)})}
-  else rv.forEach(function(r){r.classList.add('in')});
+  /* page transitions */
+  var pgs=[].slice.call(document.querySelectorAll('.pg')),links=[].slice.call(document.querySelectorAll('#pnav a')),cnt=document.getElementById('cnt');
+  pgs.forEach(function(pg){[].slice.call(pg.children).forEach(function(c,i){c.style.setProperty('--i',i)})});
+  function setActive(i){links.forEach(function(l,j){l.classList.toggle('act',i===j)});cnt.textContent=('0'+(i+1)).slice(-2)+' / 0'+pgs.length+'  '+pgs[i].getAttribute('data-name')}
+  if('IntersectionObserver' in window&&!reduce){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('in',e.isIntersecting);if(e.isIntersecting)setActive(pgs.indexOf(e.target))})},{rootMargin:'-45% 0px -45% 0px',threshold:0});
+    pgs.forEach(function(pg){io.observe(pg)});
+  }else{pgs.forEach(function(pg){pg.classList.add('in')});setActive(0)}
   /* card spotlight */
   document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
   /* background: transaction network with one flagged node */
@@ -191,22 +231,22 @@ footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
   function pickFlag(){flag={n:nodes[Math.floor(Math.random()*nodes.length)],t:0}}
   function draw(){
     g.clearRect(0,0,W,H);
-    var grd=g.createRadialGradient(W*.75,H*.2,0,W*.75,H*.2,Math.max(W,H)*.7);grd.addColorStop(0,'rgba(70,90,200,.20)');grd.addColorStop(1,'rgba(6,10,20,0)');g.fillStyle=grd;g.fillRect(0,0,W,H);
+    var grd=g.createRadialGradient(W*.75,H*.2,0,W*.75,H*.2,Math.max(W,H)*.7);grd.addColorStop(0,'rgba(200,255,60,.06)');grd.addColorStop(1,'rgba(6,10,20,0)');g.fillStyle=grd;g.fillRect(0,0,W,H);if(mouse.x>0){var mg=g.createRadialGradient(mouse.x,mouse.y,0,mouse.x,mouse.y,230);mg.addColorStop(0,'rgba(200,255,60,.11)');mg.addColorStop(1,'rgba(200,255,60,0)');g.fillStyle=mg;g.fillRect(0,0,W,H)}
     nodes.forEach(function(a){
       if(!reduce){a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1}
       var dx=a.x-mouse.x,dy=a.y-mouse.y,d=Math.hypot(dx,dy);if(d<140&&!reduce){a.x+=dx/d*.6;a.y+=dy/d*.6}});
     for(var i=0;i<nodes.length;i++){var a=nodes[i];
       for(var j=i+1;j<nodes.length;j++){var b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);
-        if(d<135){g.strokeStyle='rgba(124,156,255,'+(.22*(1-d/135))+')';g.lineWidth=1;g.beginPath();g.moveTo(a.x,a.y);g.lineTo(b.x,b.y);g.stroke()}}
+        if(d<135){g.strokeStyle='rgba(200,255,60,'+(.17*(1-d/135))+')';g.lineWidth=1;g.beginPath();g.moveTo(a.x,a.y);g.lineTo(b.x,b.y);g.stroke()}}
       var md=Math.hypot(a.x-mouse.x,a.y-mouse.y);
-      if(md<170){g.strokeStyle='rgba(180,200,255,'+(.35*(1-md/170))+')';g.beginPath();g.moveTo(a.x,a.y);g.lineTo(mouse.x,mouse.y);g.stroke()}}
-    nodes.forEach(function(a){g.fillStyle='rgba(170,190,255,.75)';g.beginPath();g.arc(a.x,a.y,a.r,0,6.283);g.fill()});
-    pulses.forEach(function(p){p.t+=.018;var x=p.a.x+(p.b.x-p.a.x)*p.t,y=p.a.y+(p.b.y-p.a.y)*p.t;g.fillStyle='rgba(74,222,154,.95)';g.shadowColor='#4ADE9A';g.shadowBlur=10;g.beginPath();g.arc(x,y,2.4,0,6.283);g.fill();g.shadowBlur=0});
+      if(md<170){g.strokeStyle='rgba(230,255,160,'+(.4*(1-md/170))+')';g.beginPath();g.moveTo(a.x,a.y);g.lineTo(mouse.x,mouse.y);g.stroke()}}
+    nodes.forEach(function(a){g.fillStyle='rgba(235,255,190,.8)';g.beginPath();g.arc(a.x,a.y,a.r,0,6.283);g.fill()});
+    pulses.forEach(function(p){p.t+=.018;var x=p.a.x+(p.b.x-p.a.x)*p.t,y=p.a.y+(p.b.y-p.a.y)*p.t;g.fillStyle='rgba(255,255,255,.95)';g.shadowColor='#C8FF3C';g.shadowBlur=10;g.beginPath();g.arc(x,y,2.4,0,6.283);g.fill();g.shadowBlur=0});
     pulses=pulses.filter(function(p){return p.t<1});
     if(flag){flag.t++;var f=flag.n,t=flag.t;
-      g.strokeStyle='rgba(255,107,107,'+Math.max(0,1-t/150)+')';g.lineWidth=1.5;g.beginPath();g.arc(f.x,f.y,6+t*.5,0,6.283);g.stroke();
-      g.fillStyle='#FF6B6B';g.beginPath();g.arc(f.x,f.y,4,0,6.283);g.fill();
-      g.font='500 11px "IBM Plex Mono",monospace';g.fillText('flagged: suspicious',f.x+12,f.y-10);
+      g.strokeStyle='rgba(255,77,109,'+Math.max(0,1-t/150)+')';g.lineWidth=1.5;g.beginPath();g.arc(f.x,f.y,6+t*.5,0,6.283);g.stroke();
+      g.fillStyle='#FF4D6D';g.beginPath();g.arc(f.x,f.y,4,0,6.283);g.fill();
+      g.font='500 11px "JetBrains Mono",monospace';g.fillText('flagged: suspicious',f.x+12,f.y-10);
       if(t>170)flag=null}}
   if(reduce){pickFlag();flag.t=40;draw();return}
   function addPulse(){var a=nodes[Math.floor(Math.random()*nodes.length)],best=null,bd=999;nodes.forEach(function(b){var d=Math.hypot(a.x-b.x,a.y-b.y);if(b!==a&&d<135&&d<bd){bd=d;best=b}});if(best)pulses.push({a:a,b:best,t:0})}setInterval(addPulse,260);addEventListener('keyhit',function(){for(var q=0;q<24;q++)addPulse()});
@@ -218,18 +258,18 @@ footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
 (function(){
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var K=[
-   ['TC','Q','#FF8A3D','Test Cases','Turning requirements into clear steps and expected results that cover normal, edge and failure paths.'],
-   ['REG','W','#4C8DFF','Regression Testing','Re-running the important checks after every change so new features don’t quietly break old ones.'],
-   ['EXP','E','#1FC7C0','Exploratory Testing','Poking at the app without a script to find the bugs nobody thought to write a test for.'],
-   ['BUG','R','#FF5D6C','Bug Reporting','Writing defects a developer can reproduce on the first read: steps, expected vs actual result, and evidence.'],
-   ['JIRA','A','#3D7BFF','Jira','Tracking defects and test progress. <span class="ph">[Edit: how you used it at Kaf Digital Bank]</span>'],
-   ['API','S','#FF7A2F','Postman','Checking that API requests and responses behave correctly. <span class="ph">[Edit: what you tested]</span>'],
-   ['SEL','D','#2FBF71','Selenium','Automating browser checks so the same tests can run again and again. <span class="ph">[Edit or remove if you haven’t used it]</span>'],
-   ['SQL','F','#F5B33D','SQL','Querying data to confirm that what the app shows matches what the database holds.'],
-   ['PY','Z','#8B6BFF','Python','Data cleaning, model training and evaluation for my fraud detection project. <span class="ph">[Confirm]</span>'],
-   ['GIT','X','#FF6BB5','Git and GitHub','Version control for my projects. This portfolio is hosted on GitHub Pages.'],
-   ['ML','C','#19C4F0','Machine Learning','Built my final year project: a model that flags suspicious credit card transactions.'],
-   ['FIN','V','#B7E34A','Financial Management','A minor in finance, so I understand the money flows I’m testing.']
+   ['TC','Q','#C8FF3C','Test Cases','Turning requirements into clear steps and expected results that cover normal, edge and failure paths.'],
+   ['REG','W','#FF4D6D','Regression Testing','Re-running the important checks after every change so new features don’t quietly break old ones.'],
+   ['EXP','E','#7DF9FF','Exploratory Testing','Poking at the app without a script to find the bugs nobody thought to write a test for.'],
+   ['BUG','R','#FFD23F','Bug Reporting','Writing defects a developer can reproduce on the first read: steps, expected vs actual result, and evidence.'],
+   ['JIRA','A','#B28DFF','Jira','Tracking defects and test progress. <span class="ph">[Edit: how you used it at Kaf Digital Bank]</span>'],
+   ['API','S','#FF8A3D','Postman','Checking that API requests and responses behave correctly. <span class="ph">[Edit: what you tested]</span>'],
+   ['SEL','D','#F4F4F0','Selenium','Automating browser checks so the same tests can run again and again. <span class="ph">[Edit or remove if you haven’t used it]</span>'],
+   ['SQL','F','#3DFFA2','SQL','Querying data to confirm that what the app shows matches what the database holds.'],
+   ['PY','Z','#FF6BD6','Python','Data cleaning, model training and evaluation for my fraud detection project. <span class="ph">[Confirm]</span>'],
+   ['GIT','X','#5B8CFF','Git and GitHub','Version control for my projects. This portfolio is hosted on GitHub Pages.'],
+   ['ML','C','#C8FF3C','Machine Learning','Built my final year project: a model that flags suspicious credit card transactions.'],
+   ['FIN','V','#FFD23F','Financial Management','A minor in finance, so I understand the money flows I’m testing.']
   ];
   var board=document.getElementById('board'),scene=document.getElementById('scene'),card=document.getElementById('detail');
   var keys=[],sound=false,ac=null;
