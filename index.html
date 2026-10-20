@@ -113,7 +113,7 @@ a:focus-visible,button:focus-visible,.key:focus-visible{outline:3px solid var(--
 .lbar{height:6px;background:rgba(255,255,255,.12);border-radius:9px;overflow:hidden;margin:26px 0 12px}
 .lbar i{display:block;height:100%;width:0;background:#C8FF3C;box-shadow:0 0 18px #C8FF3C;border-radius:9px;position:relative;overflow:hidden}
 .lbar i::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.7),transparent);transform:translateX(-100%);animation:shine 1.3s linear infinite}
-@keyframes shine{to{transform:translateX(100%)}}
+@keyframes shine{to{transform:translateX(100%)}
 .lrow{display:flex;justify-content:space-between;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#9B9BA5}
 #lp{font-size:1.05rem;color:#fff;letter-spacing:.06em}
 #ldlog{list-style:none;padding:0;margin:22px 0 0;font-size:.74rem;color:#9B9BA5;min-height:10em}
@@ -399,7 +399,10 @@ ul.pts{margin:10px 0 0;padding-left:20px}ul.pts li{margin:6px 0}
   /* ---------- loader ---------- */
   var nm=document.getElementById('nm'),lb=document.getElementById('lb'),lp=document.getElementById('lp'),ll=document.getElementById('ll'),ld=document.getElementById('ld'),ldw=document.getElementById('ldw'),lg=document.getElementById('ldlog'),lst=document.getElementById('ldst'),lsub=document.getElementById('ldsub');
   var seen=false;try{seen=sessionStorage.getItem('seen')==='1'}catch(e){}
-  var DUR=reduce?900:(seen?2800:7200);
+  
+  /* Increased duration here: 5 seconds if seen, 12 seconds for first-time visitors */
+  var DUR=reduce?900:(seen?5000:12000);
+
   var CURVE=[[0,0],[.12,9],[.3,27],[.42,36],[.5,47],[.68,66],[.78,73],[.9,93],[1,100]];
   function curve(x){for(var i=1;i<CURVE.length;i++){if(x<=CURVE[i][0]){var a=CURVE[i-1],b=CURVE[i],u=(x-a[0])/(b[0]-a[0]);u=u*u*(3-2*u);return a[1]+(b[1]-a[1])*u}}return 100}
   var CH='abcdefghijklmnopqrstuvwxyz0123456789#$%&@*',scr=0;
@@ -424,7 +427,9 @@ ul.pts{margin:10px 0 0;padding-left:20px}ul.pts li{margin:6px 0}
   }
   document.getElementById('skip').addEventListener('click',function(){skipping=true});
   requestAnimationFrame(frame);
-  setTimeout(done,15000);
+  
+  /* Increased safety timeout to 20 seconds */
+  setTimeout(done,20000);
 
   /* ---------- theme + menu ---------- */
   var tg=document.getElementById('tg');
