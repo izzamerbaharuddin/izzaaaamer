@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your Name – QA &amp; Software Quality</title>
+<meta name="description" content="IT student specialising in software quality. QA intern in digital banking. Building ML fraud detection.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060A14;--glass:rgba(16,24,44,.62);--ink:#EAF0FF;--muted:#9AA8C7;--line:rgba(140,165,255,.18);--pass:#4ADE9A;--fail:#FF6B6B;--accent:#7C9CFF}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 "IBM Plex Sans",system-ui,sans-serif;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0}
+main,footer{position:relative;z-index:1}
+.wrap{max-width:900px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;line-height:1.05;margin:0}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:70px 0 50px}
+h1{font-size:clamp(3rem,11vw,6.6rem);font-weight:800;letter-spacing:-.035em;background:linear-gradient(100deg,#fff 30%,#9db4ff 70%,#c3a6ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-size:clamp(1.05rem,2.6vw,1.4rem);color:var(--muted);margin:16px 0 30px;min-height:1.6em}
+.caret{display:inline-block;width:.6ch;height:1.1em;background:var(--accent);vertical-align:-.15em;margin-left:2px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.term{background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:12px;padding:16px 20px;max-width:580px;font-size:.92rem;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.term .dots{display:flex;gap:6px;margin-bottom:12px}
+.term .dots i{width:10px;height:10px;border-radius:50%;background:#33406a}
+.term .l{display:flex;gap:12px;padding:4px 0;opacity:0;transform:translateY(4px);transition:opacity .3s,transform .3s}
+.term .l.on{opacity:1;transform:none}
+.st{min-width:4ch;font-weight:500}
+.pass{color:var(--pass)}.fail{color:var(--fail)}
+.sum{margin-top:10px;padding-top:10px;border-top:1px solid var(--line);color:var(--muted);opacity:0;transition:opacity .4s}
+.sum.on{opacity:1}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-block;padding:13px 22px;border-radius:10px;background:var(--accent);color:#08102A;text-decoration:none;font-weight:500;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(124,156,255,.45)}
+.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
+section{padding:56px 0}
+h2{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:600;margin-bottom:24px}
+.card{--mx:50%;--my:50%;background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin-bottom:18px;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(320px circle at var(--mx) var(--my),rgba(124,156,255,.16),transparent 60%);opacity:0;transition:opacity .25s;pointer-events:none}
+.card:hover::before{opacity:1}
+.card h3{font-size:1.35rem;margin-bottom:6px}
+.card p{margin:8px 0}
+.meta{color:var(--muted);font-size:.88rem}
+ul.pts{margin:10px 0 0;padding-left:20px}ul.pts li{margin:6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:.85rem;background:rgba(124,156,255,.08)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.grid .card{margin:0}
+.ph{background:rgba(255,107,107,.16);border-radius:4px;padding:0 4px}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+footer{padding:30px 0 56px;color:var(--muted);font-size:.9rem}
+@media(prefers-reduced-motion:reduce){.rv,.term .l,.sum{opacity:1!important;transform:none!important;transition:none!important}.caret{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<main class="wrap">
+
+<header class="hero">
+  <h1>Your Name</h1>
+  <p class="role"><span id="role"></span><span class="caret" aria-hidden="true"></span></p>
+  <div class="term mono" id="term" aria-label="Sample test run">
+    <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="l"><span class="st pass">PASS</span><span>transfer: valid payment accepted</span></div>
+    <div class="l"><span class="st pass">PASS</span><span>login: wrong password rejected</span></div>
+    <div class="l" id="bug"><span class="st fail">FAIL</span><span>transfer: duplicate payment accepted</span></div>
+    <div class="sum" id="sum">Bug found, reported and retested. 3 passed. Open to QA roles.</div>
+  </div>
+  <div class="cta">
+    <a class="btn" href="#contact">Get in touch</a>
+    <a class="btn alt" href="#projects">See my work</a>
+  </div>
+</header>
+
+<section id="about" class="rv">
+  <h2>About</h2>
+  <div class="card">
+    <p>I’m completing a Bachelor of Information Technology with a major in Software Quality and a minor in Financial Management. Money software has to be correct, so I test it with both the technical and the financial side in mind.</p>
+    <p>I recently finished a QA internship at a digital bank and I’m looking for my first full-time role in quality assurance or software testing. <span class="ph">[One sentence on what you enjoy most about testing.]</span></p>
+  </div>
+</section>
+
+<section id="experience" class="rv">
+  <h2>Experience</h2>
+  <div class="card">
+    <h3>QA Intern, Kaf Digital Bank</h3>
+    <div class="meta mono">January – August <span class="ph">[Year]</span></div>
+    <ul class="pts">
+      <li><span class="ph">[What you tested, e.g. mobile app, payment flows, APIs]</span></li>
+      <li><span class="ph">[Tools, e.g. Jira, Postman, TestRail, Selenium]</span></li>
+      <li><span class="ph">[A result with a number, e.g. wrote 120 test cases, logged 45 defects]</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects" class="rv">
+  <h2>Projects</h2>
+  <div class="card">
+    <h3>Fraud Detection in Digital Banking Transactions</h3>
+    <div class="meta mono">Final year project</div>
+    <p>A machine learning model that flags suspicious credit card transactions, trained and evaluated on a public credit card dataset. The background of this page is a tiny version of the idea: normal transactions flow, and one gets flagged.</p>
+    <p><span class="ph">[Your result, e.g. model used, precision and recall, how you handled imbalanced data.]</span></p>
+    <div class="chips"><span class="chip ph">Python</span><span class="chip ph">scikit-learn</span><span class="chip ph">pandas</span></div>
+    <p><a href="#">View on GitHub</a></p>
+  </div>
+  <div class="card">
+    <h3><span class="ph">[Second project]</span></h3>
+    <p><span class="ph">[Two sentences on what it is and what you did. A test plan, an automation suite or a course project all work.]</span></p>
+    <p><a href="#">View project</a></p>
+  </div>
+</section>
+
+<section id="skills" class="rv">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card"><h3>Testing</h3><div class="chips"><span class="chip">Test cases</span><span class="chip">Regression</span><span class="chip">Exploratory</span><span class="chip">Bug reports</span></div></div>
+    <div class="card"><h3>Tools</h3><div class="chips"><span class="chip ph">Jira</span><span class="chip ph">Postman</span><span class="chip ph">Selenium</span><span class="chip ph">Git</span></div></div>
+    <div class="card"><h3>Data and ML</h3><div class="chips"><span class="chip">Python</span><span class="chip">Data analysis</span><span class="chip">Model evaluation</span></div></div>
+    <div class="card"><h3>Finance</h3><div class="chips"><span class="chip">Financial management</span><span class="chip">Digital banking</span></div></div>
+  </div>
+</section>
+
+<section id="contact" class="rv">
+  <h2>Contact</h2>
+  <div class="card">
+    <p>Hiring for a QA or testing role? I’d like to hear about it.</p>
+    <div class="cta">
+      <a class="btn" href="mailto:you@example.com">you@example.com</a>
+      <a class="btn alt" href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+      <a class="btn alt" href="https://github.com/your-username">GitHub</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">Bachelor of Information Technology, Software Quality</div></footer>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* typed role */
+  var roleEl=document.getElementById('role'),txt='QA engineer in the making. Software quality, digital banking, fraud detection.';
+  if(reduce){roleEl.textContent=txt}else{var i=0;(function t(){roleEl.textContent=txt.slice(0,i++);if(i<=txt.length)setTimeout(t,32)})()}
+  /* terminal run: one bug appears, gets fixed */
+  var ls=document.querySelectorAll('#term .l'),sum=document.getElementById('sum'),bug=document.getElementById('bug');
+  if(reduce){bug.innerHTML='<span class="st pass">PASS</span><span>transfer: duplicate payment rejected (fixed)</span>'}
+  else{
+    ls.forEach(function(l,k){setTimeout(function(){l.classList.add('on')},900+k*600)});
+    setTimeout(function(){
+      bug.innerHTML='<span class="st pass">PASS</span><span>transfer: duplicate payment rejected (fixed)</span>';
+      sum.classList.add('on')},900+ls.length*600+1500);
+  }
+  if(reduce)sum.classList.add('on');
+  /* scroll reveal */
+  var rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!reduce){var io=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});rv.forEach(function(r){io.observe(r)})}
+  else rv.forEach(function(r){r.classList.add('in')});
+  /* card spotlight */
+  document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+  /* background: transaction network with one flagged node */
+  var cv=document.getElementById('bg'),g=cv.getContext('2d'),dpr=Math.min(devicePixelRatio||1,2),W,H,nodes=[],pulses=[],flag=null,mouse={x:-999,y:-999};
+  function size(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;g.setTransform(dpr,0,0,dpr,0,0);
+    var n=Math.max(28,Math.min(85,Math.round(W*H/16000)));nodes=[];
+    for(var k=0;k<n;k++)nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:1.4+Math.random()*1.6})}
+  size();addEventListener('resize',size);
+  addEventListener('pointermove',function(e){mouse.x=e.clientX;mouse.y=e.clientY});
+  function pickFlag(){flag={n:nodes[Math.floor(Math.random()*nodes.length)],t:0}}
+  function draw(){
+    g.clearRect(0,0,W,H);
+    var grd=g.createRadialGradient(W*.75,H*.2,0,W*.75,H*.2,Math.max(W,H)*.7);grd.addColorStop(0,'rgba(70,90,200,.20)');grd.addColorStop(1,'rgba(6,10,20,0)');g.fillStyle=grd;g.fillRect(0,0,W,H);
+    nodes.forEach(function(a){
+      if(!reduce){a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1}
+      var dx=a.x-mouse.x,dy=a.y-mouse.y,d=Math.hypot(dx,dy);if(d<140&&!reduce){a.x+=dx/d*.6;a.y+=dy/d*.6}});
+    for(var i=0;i<nodes.length;i++){var a=nodes[i];
+      for(var j=i+1;j<nodes.length;j++){var b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+        if(d<135){g.strokeStyle='rgba(124,156,255,'+(.22*(1-d/135))+')';g.lineWidth=1;g.beginPath();g.moveTo(a.x,a.y);g.lineTo(b.x,b.y);g.stroke()}}
+      var md=Math.hypot(a.x-mouse.x,a.y-mouse.y);
+      if(md<170){g.strokeStyle='rgba(180,200,255,'+(.35*(1-md/170))+')';g.beginPath();g.moveTo(a.x,a.y);g.lineTo(mouse.x,mouse.y);g.stroke()}}
+    nodes.forEach(function(a){g.fillStyle='rgba(170,190,255,.75)';g.beginPath();g.arc(a.x,a.y,a.r,0,6.283);g.fill()});
+    pulses.forEach(function(p){p.t+=.018;var x=p.a.x+(p.b.x-p.a.x)*p.t,y=p.a.y+(p.b.y-p.a.y)*p.t;g.fillStyle='rgba(74,222,154,.95)';g.shadowColor='#4ADE9A';g.shadowBlur=10;g.beginPath();g.arc(x,y,2.4,0,6.283);g.fill();g.shadowBlur=0});
+    pulses=pulses.filter(function(p){return p.t<1});
+    if(flag){flag.t++;var f=flag.n,t=flag.t;
+      g.strokeStyle='rgba(255,107,107,'+Math.max(0,1-t/150)+')';g.lineWidth=1.5;g.beginPath();g.arc(f.x,f.y,6+t*.5,0,6.283);g.stroke();
+      g.fillStyle='#FF6B6B';g.beginPath();g.arc(f.x,f.y,4,0,6.283);g.fill();
+      g.font='500 11px "IBM Plex Mono",monospace';g.fillText('flagged: suspicious',f.x+12,f.y-10);
+      if(t>170)flag=null}}
+  if(reduce){pickFlag();flag.t=40;draw();return}
+  setInterval(function(){var a=nodes[Math.floor(Math.random()*nodes.length)],best=null,bd=999;nodes.forEach(function(b){var d=Math.hypot(a.x-b.x,a.y-b.y);if(b!==a&&d<135&&d<bd){bd=d;best=b}});if(best)pulses.push({a:a,b:best,t:0})},260);
+  setInterval(function(){if(!flag)pickFlag()},5200);setTimeout(pickFlag,2500);
+  (function loop(){draw();requestAnimationFrame(loop)})();
+})();
+</script>
+</body>
+</html>
